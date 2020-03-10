@@ -106,10 +106,15 @@ function DoublyLinkedList() {
         let trav;
         let i;
         if(index < length/2){
-            for(i=0,trav=head,i != index; i++){
+            for(i=0,trav=head;i != index; i++){
                 trav = trav.next;
             }
+        }else{
+            for(i = length-1,trav=tail; i!=index;i--){
+                trav = trav.prev;
+            }
         }
+        return this.removeNode(trav);
     }
 
     this.printData = function(){
